@@ -1,0 +1,82 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  margin: 20px;
+}
+
+.product-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-container:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.product-container .product-images {
+  transition: all 750ms;
+  display: flex;
+  width: 200%;
+  margin-left: 0;
+}
+
+.product-container .product-images img{
+  min-width: 50%;
+}
+
+.product-container:hover .product-images{
+  margin-left: -100%;
+}
+
+.product-container .product-see-details {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  opacity: 0;
+  transition: all 100ms;
+  font-size: 14px;
+}
+
+.product-container .product-see-details .material-icons {
+  margin-right: 8px;
+}
+
+.product-container:hover .product-see-details {
+  opacity: 1;
+}
+
+.product-container .product-new {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+
+  .product-container:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  .product-container .product-images img{
+    max-width: 50%;
+  }
+}
